@@ -7,16 +7,13 @@ distances = np.array([alg.norm(r1 - r2) for r1 in A for r2 in A]).reshape(100, 1
 print(distances)
 
 #2
-mean = [0,0,0,0,0]
+mean = np.zeros(5)
 cov = np.eye(5)
-X = np.random.multivariate_normal(mean, cov, 100)
-print(np.std(X, axis=0))
-
-np.mean(X, axis=0)
-X_new = (X-np.mean(X, axis=0))/np.std(X, axis=0)
-
-print(np.mean(X_new, axis=0))
-print(np.std(X_new, axis=0))
+A = np.random.multivariate_normal(mean, cov, 100)
+A=np.random.multivariate_normal(mean, cov, 100)
+A= (A - A.mean(0))/A.std(0)
+print(A.mean())
+print(np.cov(A.T))
 
 #3
 arr = np.random.randint(5,16,100)
@@ -26,6 +23,10 @@ maxCount = np.argmax(counts)
 print(maxCount, counts[maxCount])
 
 #4
+from sklearn.datasets import load_breast_cancer
+X, y  = load_breast_cancer(return_X_y=True)
+print(X.shape)
+print(y.shape)
 y = np.where(y==0, -1, 1)
 #print(y)
 X = (X- np.min(X, axis = 0))/(np.max(X, axis=0)- np.min(X, axis=0))
@@ -51,7 +52,7 @@ df.drop(["PassengerId", "Name", "Ticket"], axis=1, inplace=True)
 df['HasCabin'] = np.where(df['Cabin'].isnull(), 0, 1)
 
 #8
-df.dropna(inplace=True)
+df[df['Cabin'].notnull()]
 
 #9
 import matplotlib.pyplot as plt

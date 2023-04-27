@@ -3,7 +3,7 @@ N = 100000
 u=stats.uniform()
 data = u.rvs(size=N)
 mu= np.sum(data)/len(data)
-sigma= np.sqrt(np.sum((data-mu)**2)/len(data))
+sigma = np.sqrt(np.sum((data-mu)**2) /len(data))
 
 t = np.arange(-2, 2, 0.05)
 num_bins = 50
@@ -94,8 +94,8 @@ def mle_2(x):
 
 
 #11
-x1 = np.asarray((1, 1, 1))  # Initial guess.
-res1 = optimize.fmin_cg(mle_2, x1)
-print(res1)
+x = np.asarray((1, 1, 1))  # Initial guess.
+res = optimize.fmin_cg(mle_2, x)
+print(res)
 
 

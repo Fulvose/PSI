@@ -53,8 +53,6 @@ for i, (mean, cov) in enumerate(params):
     axs[i].set_title(f"n={mean}, cov={cov}")
 plt.show()
 
-
-
 params = [
     (np.array([0, 0]), np.array([[1, 0], [0, 1]])),
     (np.array([0, 0]), np.array([[2, 0], [0, 1]])),

@@ -113,7 +113,7 @@ surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
                        linewidth=0.01, antialiased=True, alpha=0.3)
 
 
-#####################################
+#
 
 def step_gradient_2d(x_current, y_current, learningRate):
     x_gradient = 8*x_current -2
@@ -144,7 +144,7 @@ num_iterations = 10
 [x, y] = gradient_descent_runner_2d(initial_x, initial_y, learning_rate, num_iterations)
 
 
-#####################################
+#
 
 plt.plot([initial_x],[initial_y],[fun(initial_x,initial_y)],"ok")
 plt.show()
@@ -170,7 +170,7 @@ CS = plt.contour(X,Y,Z)
 
 plt.plot([5],[5],"o")
 
-#####################################
+#
 
 def step_gradient_2d(x_current, y_current, learningRate):
     x_gradient = 2*x_current
@@ -232,7 +232,7 @@ surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
                        linewidth=0.01, antialiased=True, alpha=0.3)
 
 
-#####################################
+#
 
 def step_gradient_2d(x_current, y_current, learningRate):
     x_gradient = 2*x_current 
@@ -263,7 +263,7 @@ num_iterations = 5
 [x, y] = gradient_descent_runner_2d(initial_x, initial_y, learning_rate, num_iterations)
 
 
-#####################################
+#
 
 plt.plot([initial_x],[initial_y],[fun(initial_x,initial_y)],"ok")
 plt.show()
